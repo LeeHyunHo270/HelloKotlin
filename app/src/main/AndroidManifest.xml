@@ -9,6 +9,12 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.HelloKotlin">
+        <activity
+            android:name=".VariableKotlinActivity"
+            android:label="VariableKotlinActivity"></activity>
+        <activity
+            android:name=".VariableJavaActivity"
+            android:label="VariableJavaActivity" />
         <activity android:name=".MainActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -16,9 +22,12 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".BmiJavaActivity" android:label="BmiJavaActivity"/>
-        <activity android:name=".BmiKotlinActivity" android:label="BMI calculation"/>
-
+        <activity
+            android:name=".BmiJavaActivity"
+            android:label="BmiJavaActivity" />
+        <activity
+            android:name=".BmiKotlinActivity"
+            android:label="BMI calculation" />
     </application>
 
 </manifest>

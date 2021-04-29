@@ -15,9 +15,10 @@ class MainActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
-        var intent: Intent
         val btnJava = findViewById<Button>(R.id.btnJava)
         val btnKotlin = findViewById<Button>(R.id.btnKotlin)
+        val btnVarJava = findViewById<Button>(R.id.btnVarJava)
+        val btnVarKotlin = findViewById<Button>(R.id.btnVarKotlin)
 
         btnJava .setOnClickListener{
 
@@ -27,6 +28,16 @@ class MainActivity : AppCompatActivity() {
         btnKotlin .setOnClickListener{
 
             startActivity(Intent(this@MainActivity,BmiKotlinActivity::class.java))
+        }
+
+        btnVarJava .setOnClickListener{
+
+            startActivity(Intent(this@MainActivity,VariableJavaActivity::class.java))
+        }
+
+        btnVarKotlin .setOnClickListener{
+
+            startActivity(Intent(this@MainActivity,VariableKotlinActivity::class.java))
         }
     }
 }
