@@ -7,14 +7,17 @@ import android.widget.Button
 import android.widget.Toast
 
 class MainActivity : AppCompatActivity() {
-// val btnHello = findViewById<Button>(R.id.btnHello)
-//var btnhello : Button
-// btnhello = findViewById(R.id.btnhello) //
-// Toast.makeText(this@MainActivity, "Hello Kotlin",Toast.LENGTH_LONG).show()
+
+//    val btnHello = findViewById<Button>(R.id.btnJava) //Val 상수, 불변 변수
+
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
+
+        // var btnHello : Button  //Var 일반적인 변수
+        // btnHello = findViewById(R.id.btnHello)
+        var intent: Intent
         val btnJava = findViewById<Button>(R.id.btnJava)
         val btnKotlin = findViewById<Button>(R.id.btnKotlin)
         val btnVarJava = findViewById<Button>(R.id.btnVarJava)
@@ -22,32 +25,23 @@ class MainActivity : AppCompatActivity() {
         val btnFlowControlJava = findViewById<Button>(R.id.btnFlowControlJava)
         val btnFlowControlKotlin = findViewById<Button>(R.id.btnFlowControlKotlin)
 
-        btnJava .setOnClickListener{
-
+        btnJava.setOnClickListener {
             startActivity(Intent(this@MainActivity,BmiJavaActivity::class.java))
         }
-
-        btnKotlin .setOnClickListener{
-
+        btnKotlin.setOnClickListener {
             startActivity(Intent(this@MainActivity,BmiKotlinActivity::class.java))
         }
-
-        btnVarJava .setOnClickListener{
-
-            startActivity(Intent(this@MainActivity,VariableJavaActivity::class.java))
+        btnVarJava.setOnClickListener {
+            startActivity(Intent(this@MainActivity, VariableJavaActivity :: class.java))
         }
-
-        btnVarKotlin .setOnClickListener{
-
-            startActivity(Intent(this@MainActivity,VariableKotlinActivity::class.java))
+        btnVarKotlin.setOnClickListener {
+            startActivity(Intent(this@MainActivity, VariableKotlinActivity :: class.java))
         }
-        btnFlowControlJava .setOnClickListener{
-
-            startActivity(Intent(this@MainActivity,FlowControlJavaActivity::class.java))
+        btnFlowControlJava.setOnClickListener {
+            startActivity(Intent(this@MainActivity, FlowControlJavaActivity :: class.java))
         }
-        btnFlowControlKotlin .setOnClickListener{
-
-            startActivity(Intent(this@MainActivity,FlowControlKotlinActivity::class.java))
+        btnFlowControlKotlin.setOnClickListener{
+            startActivity(Intent(this@MainActivity, FlowControlKotlinActivity :: class.java))
         }
     }
 }

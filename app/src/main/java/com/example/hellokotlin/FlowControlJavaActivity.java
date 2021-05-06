@@ -33,13 +33,16 @@ public class FlowControlJavaActivity extends AppCompatActivity {
                     Toast.makeText(getApplicationContext(), ""+number + "은(는) 3의 배수", Toast.LENGTH_SHORT).show();
                 }
                 else{
-                    Toast.makeText(getApplicationContext(), "" + number + "은(는) else", Toast.LENGTH_SHORT).show();
+                    Toast.makeText(getApplicationContext(), "" + number + "은(는) else", Toast.LENGTH_LONG).show();
                 }
                 switch(number){
                     case 4:
-                        //btnLD.setText("실행 for 4");break;
-                    case 9: btnLD.setText("실행 for "+number);break;
-                    default: btnLD.setText("실행 for else");break;
+                    case 9:
+                        btnLD.setText("실행 for " + number);
+                        break;
+                    default:
+                        btnLD.setText("실행 for else");
+                        break;
                 }
 
             }
