@@ -8,6 +8,9 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Toast;
 
+import static com.example.hellokotlin.ToastUtilJava.toast_long;
+import static com.example.hellokotlin.ToastUtilJava.toast_short;
+
 public class FlowControlJavaActivity extends AppCompatActivity {
 
     EditText fieldNumber;
@@ -21,32 +24,33 @@ public class FlowControlJavaActivity extends AppCompatActivity {
         fieldNumber = findViewById(R.id.fieldNumber);
         btnLD = findViewById(R.id.btnLD);
 
-        btnLD.setOnClickListener(new View.OnClickListener(){
+        btnLD.setOnClickListener(new View.OnClickListener() {
 
-            @Override
             public void onClick(View view) {
                 int number = Integer.parseInt(fieldNumber.getText().toString());
-                if (number % 2 == 0 ){
-                    Toast.makeText(getApplicationContext(), ""+number + "은(는) 2의 배수", Toast.LENGTH_SHORT).show();
-                }
-                else if (number % 3 == 0){
-                    Toast.makeText(getApplicationContext(), ""+number + "은(는) 3의 배수", Toast.LENGTH_SHORT).show();
-                }
-                else{
+                if (number % 2 == 0) {
+                    Toast.makeText(getApplicationContext(), "" + number + "은(는) 2의 배수", Toast.LENGTH_SHORT).show();
+                    //Toast.makeText(getApplicationContext(), ""+number + "은(는) 2의 배수", Toast.LENGTH_SHORT).show();
+                    toast_short(number + "은(는) 2의 배수");
+                } else if (number % 3 == 0) {
+                    Toast.makeText(getApplicationContext(), "" + number + "은(는) 3의 배수", Toast.LENGTH_SHORT).show();
+                    //Toast.makeText(getApplicationContext(), ""+number + "은(는) 3의 배수", Toast.LENGTH_SHORT).show();
+                    toast_short(number + "은(는) 3의 배수");
+                } else {
                     Toast.makeText(getApplicationContext(), "" + number + "은(는) else", Toast.LENGTH_LONG).show();
-                }
-                switch(number){
-                    case 4:
-                    case 9:
-                        btnLD.setText("실행 for " + number);
-                        break;
-                    default:
-                        btnLD.setText("실행 for else");
-                        break;
+                    //Toast.makeText(getApplicationContext(), "" + number + "은(는) else", Toast.LENGTH_LONG).show();
+                    toast_long(number + "은(는) else");
                 }
 
             }
         });
-
     }
-}
+        private void toast_short (String s){
+            Toast.makeText(getApplicationContext(), s, Toast.LENGTH_SHORT).show();
+        }
+
+        private void toast_long (String s){
+            Toast.makeText(getApplicationContext(), s, Toast.LENGTH_LONG).show();
+        }
+    }
+
